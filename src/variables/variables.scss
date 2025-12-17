@@ -1,0 +1,34 @@
+$primaryColor: #f73;
+$themeOrangeColor: $primaryColor;
+$themeGrayColor: #333;
+
+$themeBgColor: $themeGrayColor;
+
+$lightBlueColor: #bbdde6;
+
+$socialIconSize: 32px;
+$socialIconSmallSize: 22px;
+
+// Delays
+
+$transitionTimeMs: 250ms;
+$animationTimeMs: 500ms;
+$disappearTimeMs: 1000ms;
+
+// NavHeader
+
+$navbarHeight: 72px;
+$topMenuHeight: 72px;
+
+// Fonts
+
+$defaultFont: 'Inter', Arial, sans-serif;
+$titleFont: 'DrukTextWideTT', Arial, sans-serif;
+$defaultFontSize: 16px;
+
+// Adaptive layouts...
+
+$extraWideTreshold: 1400px;
+$wideTreshold: 1200px;
+$mobileTreshold: 980px;
+$smallTreshold: 660px;

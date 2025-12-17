@@ -1,0 +1,7 @@
+@use '../variables' as *;
+
+#allrecords .uc-NavMenu {
+  // Links...
+  @include basicActiveLink;
+  border: 2px solid green; // DEBUG
+}

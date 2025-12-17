@@ -1,0 +1,28 @@
+@use '../variables' as *;
+
+#allrecords .uc-StoreGrid {
+  @include basicActiveLink;
+  .js-product-img {
+    border-radius: 10px;
+  }
+  .js-product-price {
+    font-size: 1.3em;
+  }
+  .t-store__card__price-currency {
+    font-size: 0.75em;
+  }
+  .t-store__card__price-currency {
+    margin-top: 10px;
+  }
+  .t-store__card__imgwrapper {
+    // Adjust layout for more taller images
+    padding-bottom: 135%;
+  }
+  .t-btn {
+    transition: all var(--transitionTimeMs);
+    &:hover {
+      background-color: $themeOrangeColor !important;
+      opacity: 1;
+    }
+  }
+}
