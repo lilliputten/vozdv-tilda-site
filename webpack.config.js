@@ -83,6 +83,9 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
+              api: 'modern',
+              // Pass dev/prod falg variables. Use it like `@if $isDev {...` etc
+              additionalData: `$isDev: ${isDev}; $isProd: ${!isDev};`,
               /* // NOTE: Inject 'use' for math and color features, import common variables and mixins.
                * additionalData: [
                *   // '@use "sass:math";',
@@ -93,8 +96,8 @@ module.exports = {
                *   .filter(Boolean)
                *   .join('\n'),
                */
-              api: 'modern',
               sassOptions: {
+                // TODO: Pass isDev to the modules
                 // @see https://github.com/sass/node-sass#outputstyle
                 outputStyle: minimizeAssets ? 'compressed' : 'expanded',
                 quietDeps: true,

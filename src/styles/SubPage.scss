@@ -23,7 +23,7 @@
           color: #fff;
           padding: 0.5em 2em;
           &:hover {
-            background-color: $themeOrangeColor;
+            background-color: $themeAccentColor;
             opacity: 1;
           }
         }
@@ -42,14 +42,14 @@
     .t-slds__arrow {
       transition: all var(--transitionTimeMs);
       &:hover {
-        background-color: $themeOrangeColor !important;
+        background-color: $themeAccentColor !important;
         opacity: 1;
       }
     }
     .t-btn {
       transition: all var(--transitionTimeMs);
       &:hover {
-        background-color: $themeOrangeColor !important;
+        background-color: $themeAccentColor !important;
         opacity: 1;
       }
     }
@@ -73,7 +73,7 @@
     border-radius: 5px;
   }
   .t-slds__bullet_active .t-slds__thumbsbullet-border {
-    border-color: var(--themeOrangeColor);
+    border-color: $themeAccentColor;
   }
 
   // Blog post image
@@ -92,7 +92,7 @@
   .t-zoomer__close {
     transition: all var(--transitionTimeMs);
     &:hover {
-      background-color: $themeOrangeColor !important;
+      background-color: $themeAccentColor !important;
       opacity: 1;
     }
   }
@@ -106,7 +106,7 @@
       opacity: 1;
       .t-carousel__zoomer__arrow__wrapper {
         &:before {
-          background-color: $themeOrangeColor !important;
+          background-color: $themeAccentColor !important;
         }
       }
     }

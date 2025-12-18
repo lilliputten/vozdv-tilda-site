@@ -1,10 +1,22 @@
-$primaryColor: #f73;
-$themeOrangeColor: $primaryColor;
+// Core colors
+$greenColor: #9a2;
+$greenDarkColor: #672;
+$goldColor: #fb0;
+$goldDarkColor: #f90;
+$blueLightColor: #3ae;
+$blueTintedColor: #135;
+
+// App colors...
+$primaryColor: $greenColor;
+
+$themeAccentColor: $primaryColor;
 $themeGrayColor: #333;
+
+$textColor: #333;
 
 $themeBgColor: $themeGrayColor;
 
-$lightBlueColor: #bbdde6;
+// Social icons
 
 $socialIconSize: 32px;
 $socialIconSmallSize: 22px;
@@ -30,5 +42,5 @@ $defaultFontSize: 16px;
 
 $extraWideTreshold: 1400px;
 $wideTreshold: 1200px;
-$mobileTreshold: 980px;
+$mobileTreshold: 960px;
 $smallTreshold: 660px;

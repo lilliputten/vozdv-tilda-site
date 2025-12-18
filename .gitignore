@@ -11,6 +11,8 @@ _cache
 .DS_Store
 
 tsconfig.tsbuildinfo
+.dependencygraph
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

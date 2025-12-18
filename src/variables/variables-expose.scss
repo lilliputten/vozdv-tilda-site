@@ -8,17 +8,14 @@
 }
 
 :root {
-  --themeBgColor: #{$themeBgColor};
-  --themeBgRGB: #{rgbComponents($themeBgColor)};
-
   --primaryColor: #{$primaryColor};
   --primaryRGB: #{rgbComponents($primaryColor)};
 
-  --themeOrangeColor: #{$themeOrangeColor};
-  --themeOrangeRGB: #{rgbComponents($themeOrangeColor)};
+  // --themeBgColor: #{$themeBgColor};
+  // --themeBgRGB: #{rgbComponents($themeBgColor)};
 
-  --lightBlueColor: #{$lightBlueColor};
-  --lightBlueRGB: #{rgbComponents($lightBlueColor)};
+  // --themeAccentColor: #{$themeAccentColor};
+  // --themeAccentRGB: #{rgbComponents($themeAccentColor)};
 
   --defaultFont: #{$defaultFont};
   --titleFont: #{$titleFont};

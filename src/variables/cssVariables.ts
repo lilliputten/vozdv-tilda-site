@@ -1,4 +1,4 @@
-/** @desc Re-export parsed and typed scss variables */
+/** @desc Re-export parsed and typed scss variables (required in the code) */
 
 import * as cssVariables from './variables-export.scss';
 
@@ -9,26 +9,30 @@ const {
   blockNavHeader,
   blockTopMenu,
 
-  smallTreshold,
-  mobileTreshold,
+  extraWideTreshold,
   wideTreshold,
+  mobileTreshold,
+  smallTreshold,
 } = vars;
 
-const smallTresholdPx = parseInt(smallTreshold);
-const mobileTresholdPx = parseInt(mobileTreshold);
+const extraWideTresholdPx = parseInt(extraWideTreshold);
 const wideTresholdPx = parseInt(wideTreshold);
+const mobileTresholdPx = parseInt(mobileTreshold);
+const smallTresholdPx = parseInt(smallTreshold);
 
 // See pre-exports in `variables-export.scss`
 export interface TCssVariables {
   blockNavHeader: string;
   blockTopMenu: string;
 
-  smallTreshold: string;
-  smallTresholdPx: number;
-  mobileTreshold: string;
-  mobileTresholdPx: number;
+  extraWideTreshold: string;
+  extraWideTresholdPx: number;
   wideTreshold: string;
   wideTresholdPx: number;
+  mobileTreshold: string;
+  mobileTresholdPx: number;
+  smallTreshold: string;
+  smallTresholdPx: number;
 }
 
 export {
@@ -37,12 +41,14 @@ export {
   blockTopMenu,
 
   // Tresholds as is...
-  smallTreshold,
-  mobileTreshold,
+  extraWideTreshold,
   wideTreshold,
+  mobileTreshold,
+  smallTreshold,
 
   // Tresholds as numbers...
-  smallTresholdPx,
-  mobileTresholdPx,
+  extraWideTresholdPx,
   wideTresholdPx,
+  mobileTresholdPx,
+  smallTresholdPx,
 };
