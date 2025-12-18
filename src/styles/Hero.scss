@@ -1,0 +1,85 @@
+@use '../variables' as *;
+
+#allrecords .uc-Hero {
+  // Links...
+  @include basicActiveLink;
+  .t216__wrapper {
+    padding: 20px 0;
+  }
+  .t216__descr {
+    padding: 10px 20px;
+  }
+  .t-cover__carrier {
+    overflow: hidden;
+    position: relative;
+    background-position: center;
+    background-position: 80% 45%;
+    transition: opacity 1.5s;
+    &:not(.cover-inited) {
+      opacity: 0;
+    }
+  }
+  .dove {
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    // filter: blur(0.3px);
+    transition: all 1s ease-out;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    &.ready {
+      opacity: 1;
+      @media (width <= 500px) {
+        opacity: 0;
+      }
+    }
+  }
+  .dove-left1 {
+    left: -20%;
+    top: 95%;
+    transition-delay: 0.5s;
+    &.ready {
+      $size: 15vw;
+      width: $size;
+      height: $size;
+      left: 15%;
+      top: 70%;
+      @media (width <= 800px) {
+        opacity: 0;
+      }
+    }
+  }
+  .dove-left2 {
+    transition-duration: 1.5s;
+    left: 70%;
+    top: 120%;
+    rotate: 20deg;
+    &.ready {
+      $size: 10vw;
+      width: $size;
+      height: $size;
+      left: 20%;
+      top: 30%;
+      @media (width <= 1200px) {
+        opacity: 0;
+      }
+    }
+  }
+  .dove-right {
+    transition-delay: 0.5s;
+    transition-duration: 1.5s;
+    right: -20%;
+    top: 45%;
+    &.ready {
+      $size: 5vw;
+      width: $size;
+      height: $size;
+      right: 10%;
+      top: 10%;
+    }
+  }
+}

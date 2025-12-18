@@ -5,6 +5,7 @@ import './styles';
 import { initConfirmForms } from './ConfirmForm';
 import { isDebug } from './core/constants/isDebug';
 import { isDev } from './core/constants/isDev';
+import { initHero } from './Hero';
 import { initNavMenu } from './NavMenu';
 
 // import { initFooterSocials } from './FooterSocials';
@@ -26,6 +27,7 @@ function initPage() {
   // Start subcomponents...
   initConfirmForms();
   initNavMenu();
+  initHero();
   // initSubPage();
   // initStoreProduct();
   // initFooterSocials();

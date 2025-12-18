@@ -16,8 +16,6 @@ navMenu:
   .tmenu-mobile__menucontent_hidden -- To hide on mobile
 */
 
-import { mobileTresholdPx } from './variables';
-
 function updateNavMenuHeight(
   navMenu: HTMLDivElement,
   menuBase: HTMLDivElement,
@@ -44,11 +42,13 @@ function setupNodes(navHeader: HTMLDivElement, navMenu: HTMLDivElement) {
   const logoClone = logoBase.cloneNode(true);
   menuBase.prepend(navHeader);
   headerWrapper.prepend(logoClone);
-  // NOTE: Call it once!
-  window.addEventListener('resize', () => {
+
+  // Calculate the dimensions and set the event handler to upadte it on windows resize
+  requestAnimationFrame(() => {
     updateNavMenuHeight(navMenu, menuBase, menuMobileBase);
   });
-  requestAnimationFrame(() => {
+  // NOTE: Call it once!
+  window.addEventListener('resize', () => {
     updateNavMenuHeight(navMenu, menuBase, menuMobileBase);
   });
 }

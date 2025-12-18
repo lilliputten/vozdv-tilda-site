@@ -2,6 +2,7 @@ import './Root.scss';
 import './ConfirmForm.scss';
 import './NavHeader.scss';
 import './NavMenu.scss';
+import './Hero.scss';
 
 // import './FooterSocials.scss';
 // import './StoreGrid.scss';

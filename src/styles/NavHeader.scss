@@ -17,9 +17,9 @@
     line-height: 1.3;
   }
 
-    a {
-      color: $textColor;
-    }
+  a {
+    color: $textColor;
+  }
   @media (width <= $mobileTreshold) {
     background-color: $blueTintedColor !important;
     a {

@@ -38,7 +38,7 @@ module.exports = {
     // './src/styles.scss',
   ],
   resolve: {
-    extensions: ['.scss', '.sass', '.css', '.tsx', '.ts', '.js', '.svg'],
+    extensions: ['.scss', '.sass', '.css', '.tsx', '.ts', '.js', '.svg', '.png', '.jpg'],
   },
   module: {
     rules: [
@@ -114,7 +114,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+        test: /\.(png|jpe?g|gif|svg|png|jpg|eot|ttf|woff|woff2)$/i,
         // More information here https://webpack.js.org/guides/asset-modules/
         type: 'asset/inline',
       },
