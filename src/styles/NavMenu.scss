@@ -1,9 +1,11 @@
 @use '../variables' as *;
 
 #allrecords .uc-NavMenu {
+  overflow: hidden;
+  // NOTE: It must be updated dynamically (see `NavMenu:updateNavMenuHeight`). Thise height values are just initial ones.
+  height: 88px;
   @media (width > $mobileTreshold) {
-    // NOTE: It must be updated dynamically (see `NavMenu:updateNavMenuHeight`)
-    height: 100px;
+    height: 177px;
   }
   // Links...
   @include basicActiveLink;

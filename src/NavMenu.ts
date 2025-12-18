@@ -43,7 +43,11 @@ function setupNodes(navHeader: HTMLDivElement, navMenu: HTMLDivElement) {
   menuBase.prepend(navHeader);
   headerWrapper.prepend(logoClone);
 
+  navHeader.classList.add('inited');
+
   // Calculate the dimensions and set the event handler to upadte it on windows resize
+  updateNavMenuHeight(navMenu, menuBase, menuMobileBase);
+  // JFC... (Is it required?)
   requestAnimationFrame(() => {
     updateNavMenuHeight(navMenu, menuBase, menuMobileBase);
   });
