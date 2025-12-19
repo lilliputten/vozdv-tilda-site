@@ -1,22 +1,18 @@
 @use '../variables' as *;
 
-#allrecords .uc-FooterSocials {
+#allrecords .uc-Footer {
   @include activeLink;
   .t-sociallinks__item {
     margin: 0 0.25em;
+    svg {
+      $size: 33px;
+      width: $size;
+      height: $size;
+    }
   }
   /* // Sample for stylize of specific social link
    * a[href^="https://ozon.ru/"] {
    *   border: 1px solid red;
    * }
    */
-  /*
-  .t1058__row {
-    border-bottom: 1px solid #fff;
-    // Don't collapse block on narrow screens
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-  }
-  */
 }

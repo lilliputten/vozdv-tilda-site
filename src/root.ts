@@ -5,6 +5,7 @@ import './styles';
 import { initConfirmForms } from './ConfirmForm';
 import { isDebug } from './core/constants/isDebug';
 import { isDev } from './core/constants/isDev';
+import { initFooterSocials } from './FooterSocials';
 import { initHero } from './Hero';
 import { initNavMenu } from './NavMenu';
 
@@ -28,6 +29,7 @@ function initPage() {
   initConfirmForms();
   initNavMenu();
   initHero();
+  initFooterSocials();
   // initSubPage();
   // initStoreProduct();
   // initFooterSocials();

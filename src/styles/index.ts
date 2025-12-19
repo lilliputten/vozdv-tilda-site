@@ -3,8 +3,8 @@ import './ConfirmForm.scss';
 import './NavHeader.scss';
 import './NavMenu.scss';
 import './Hero.scss';
+import './Footer.scss';
 
-// import './FooterSocials.scss';
 // import './StoreGrid.scss';
 // import './SubPage.scss';
 // import './Blog.scss';
