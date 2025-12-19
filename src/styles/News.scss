@@ -1,0 +1,26 @@
+@use '../variables' as *;
+
+/*! News */
+
+.uc-News {
+  .js-feed-post {
+    &,
+    .t-bgimg {
+      transition: opacity $transitionTimeMs;
+    }
+    #allrecords &:hover {
+      &,
+      a,
+      .t-feed__post-descr {
+        color: $blueTintedColor !important;
+        text-decoration: underline;
+        opacity: 0.85;
+      }
+      .t-bgimg {
+      }
+    }
+  }
+  .t-feed__buttons-wrapper {
+    @include activeLink;
+  }
+}

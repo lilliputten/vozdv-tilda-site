@@ -7,6 +7,7 @@ import './Footer.scss';
 import './AboutShort.scss';
 import './ArticlesPreview.scss';
 import './Feedback.scss';
+import './News.scss';
 
 // import './StoreGrid.scss';
 // import './SubPage.scss';
