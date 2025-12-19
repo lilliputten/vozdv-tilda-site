@@ -4,6 +4,9 @@ import './NavHeader.scss';
 import './NavMenu.scss';
 import './Hero.scss';
 import './Footer.scss';
+import './AboutShort.scss';
+import './ArticlesPreview.scss';
+import './Feedback.scss';
 
 // import './StoreGrid.scss';
 // import './SubPage.scss';

@@ -1,0 +1,25 @@
+@use '../variables' as *;
+
+/*! AboutShort */
+
+.uc-AboutShort {
+  @include activeLink;
+  .t-bgimg,
+  .t814__blocktext {
+    border-radius: 20px;
+  }
+  .t-container {
+    @media (width <= $mobileTreshold) {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 20px;
+      &:before,
+      &:after {
+        display: none;
+      }
+      .t814__top {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

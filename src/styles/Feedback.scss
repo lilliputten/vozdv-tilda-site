@@ -1,0 +1,59 @@
+@use '../variables' as *;
+
+/*! Feedback */
+
+#allrecords .uc-Feedback {
+  @include activeLink;
+  .t-slds__container {
+    // Navigation dots top margin
+    margin-bottom: 20px;
+  }
+  .t-slds__bullet_wrapper {
+    // Navigation dots relative offset
+    bottom: 0;
+  }
+  .t-slds__arrow_container {
+    // Sliders' arrows
+    @media (width <= $mobileTreshold) {
+      // Hide on small screens
+      display: none;
+    }
+  }
+  .t734__wrapper {
+    // Text top margin
+    padding-top: 20px;
+  }
+  .t734__textwrapper {
+    // $defaultPadding: 60px;
+    // padding-left: $defaultPadding;
+    // padding-right: $defaultPadding;
+    @media (width > $mobileTreshold) {
+      // Place quote arts
+      padding-left: 150px;
+      padding-right: 120px;
+      position: relative;
+      &:before,
+      &:after {
+        position: absolute;
+        content: '';
+        $quoteSize: 70px;
+        width: $quoteSize;
+        height: $quoteSize;
+        background-image: url('../assets/Feedback/quote.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        pointer-events: none;
+      }
+      &:before {
+        left: 0;
+        top: 0;
+      }
+      &:after {
+        right: 0;
+        bottom: 0;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

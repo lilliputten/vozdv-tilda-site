@@ -2,6 +2,7 @@ import './project-info.scss';
 import './variables/variables-expose.scss';
 import './styles';
 
+import { initArticlesPreview } from './ArticlesPreview';
 import { initConfirmForms } from './ConfirmForm';
 import { isDebug } from './core/constants/isDebug';
 import { isDev } from './core/constants/isDev';
@@ -30,6 +31,8 @@ function initPage() {
   initNavMenu();
   initHero();
   initFooterSocials();
+  initArticlesPreview();
+
   // initSubPage();
   // initStoreProduct();
   // initFooterSocials();

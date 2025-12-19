@@ -1,6 +1,6 @@
 @use '../variables' as *;
 
-#allrecords .uc-NavMenu {
+.uc-NavMenu {
   overflow: hidden;
   // NOTE: It must be updated dynamically (see `NavMenu:updateNavMenuHeight`). Thise height values are just initial ones.
   height: 88px;

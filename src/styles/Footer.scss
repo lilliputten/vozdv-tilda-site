@@ -1,9 +1,11 @@
 @use '../variables' as *;
 
-#allrecords .uc-Footer {
+/*! Footer */
+
+.uc-Footer {
   @include activeLink;
   .t-sociallinks__item {
-    margin: 0 0.25em;
+    // margin: 0 0.25em;
     svg {
       $size: 33px;
       width: $size;

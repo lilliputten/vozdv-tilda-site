@@ -1,6 +1,8 @@
 @use 'sass:color';
 @use '../variables' as *;
 
+/*! Root */
+
 body {
   // padding-top: $NavHeaderTotalHeight;
 }
@@ -16,5 +18,9 @@ body {
 }
 
 .t-tildalabel {
-  background-color: color.adjust($blueTintedColor, $lightness: -5%);
+  background-color: color.adjust($blueTintedColor, $lightness: -2%);
+}
+
+.uc-SoleHeader {
+  padding-bottom: 0 !important;
 }

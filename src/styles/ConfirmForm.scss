@@ -1,7 +1,11 @@
 @use '../variables' as *;
 
+/*! ConfirmForm */
+
 #allrecords {
+  .uc-FormSmall .t716__hint,
   [class*='__form-bottom-text'] {
     @include activeLink;
+    font-size: 17px;
   }
 }
