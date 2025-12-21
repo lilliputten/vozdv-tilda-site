@@ -25,6 +25,5 @@ export const socials: Record<string, TSocial> = {
   max: {
     footerSvgData: maxWhiteSvg,
     urlPrefixes: ['https://max.ru/', 'https://www.max.ru/'],
-    productTitle: 'Купить на Wildberries',
   },
 };
