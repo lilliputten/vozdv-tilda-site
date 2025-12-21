@@ -1,8 +1,8 @@
 {
   "name": "vozdv-tilda-site",
   "version": "0.0.0",
-  "timetag": "251220-0037",
-  "timestamp": "2025.12.20 00:37:53 +0300",
+  "timetag": "251222-0117",
+  "timestamp": "2025.12.22 01:17:24 +0300",
   "changed": "2025.12.18, 01:21",
   "description": "Compillable js and css assets for vozdv.ru tilda site",
   "main": "index.html",

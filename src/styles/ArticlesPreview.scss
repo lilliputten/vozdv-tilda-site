@@ -1,6 +1,8 @@
 @use 'sass:color';
 @use '../variables' as *;
 
+/*! ArticlesPreview */
+
 .uc-ArticlesPreview {
   #allrecords & .t-card__container {
     row-gap: 30px;

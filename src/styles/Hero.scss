@@ -1,5 +1,7 @@
 @use '../variables' as *;
 
+/*! Hero */
+
 #allrecords .uc-Hero {
   // Links...
   @include basicActiveLink;
