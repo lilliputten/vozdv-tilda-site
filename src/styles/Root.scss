@@ -13,11 +13,12 @@
   opacity: 0.5;
 }
 
-// Bottom tilda banner
-
-.t-tildalabel {
-  background-color: color.adjust($blueTintedColor, $lightness: -2%);
-}
+/* // NOTE: This doesn't work in production: it seems that Tilda has a kind of protection for its both label nodes and styles
+ * // Bottom tilda banner
+ * .t-tildalabel {
+ *   background-color: $blueTintedDarkenColor; // color.adjust($blueTintedColor, $lightness: -2%);
+ * }
+ */
 
 // Minor block fixes...
 

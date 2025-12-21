@@ -2,7 +2,11 @@
 
 // stylelint-disable selector-pseudo-class-no-unknown, property-no-unknown
 :export {
+  primaryColor: #{$primaryColor};
+  blueTintedDarkenColor: #{$blueTintedDarkenColor};
+
   // Tresholds...
+  extraWideTreshold: #{$extraWideTreshold};
   smallTreshold: #{$smallTreshold};
   mobileTreshold: #{$mobileTreshold};
   wideTreshold: #{$wideTreshold};

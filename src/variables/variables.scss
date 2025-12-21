@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Core colors
 $greenColor: #9a2;
 $greenDarkColor: #672;
@@ -6,9 +8,10 @@ $goldDarkColor: #f90;
 $blueLightColor: #3ae;
 $blueDark3: #047;
 $blueTintedColor: #135;
+$blueTintedDarkenColor: color.adjust($blueTintedColor, $lightness: -2%);
 
 // App colors...
-$primaryColor: $greenColor;
+$primaryColor: $blueTintedColor;
 
 $themeAccentColor: $primaryColor;
 $themeGrayColor: #333;

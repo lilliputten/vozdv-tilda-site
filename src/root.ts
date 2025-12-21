@@ -13,8 +13,6 @@ import { initNavMenu } from './NavMenu';
 /** Print app info */
 function printAppInfo() {
   const appVersion = process.env.APP_VERSION;
-  // const isDebug = process.env.DEBUG;
-  // const isDev = process.env.DEV;
   // eslint-disable-next-line no-console
   const consoleMethod = isDebug || isDev ? console.warn : console.log;
   consoleMethod.call(console, appVersion);
@@ -28,6 +26,10 @@ function initPage() {
   initHero();
   initFooterSocials();
   initArticlesPreview();
+
+  /* // NOTE: This doesn't work
+   * initTildaLabel();
+   */
 
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));
