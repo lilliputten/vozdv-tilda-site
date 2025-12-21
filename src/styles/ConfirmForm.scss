@@ -3,6 +3,7 @@
 /*! ConfirmForm */
 
 #allrecords {
+  .uc-FormCustom .t716__hint,
   .uc-FormSmall .t716__hint,
   [class*='__form-bottom-text'] {
     @include activeLink;

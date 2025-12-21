@@ -22,9 +22,11 @@
           background-color: $themeBgColor;
           color: #fff;
           padding: 0.5em 2em;
-          &:hover {
-            background-color: $themeAccentColor;
-            opacity: 1;
+          @media #{$hoverMediaRules} {
+            &:hover {
+              background-color: $themeAccentColor;
+              opacity: 1;
+            }
           }
         }
       }
@@ -41,16 +43,20 @@
     @include basicActiveLink;
     .t-slds__arrow {
       transition: all var(--transitionTimeMs);
-      &:hover {
-        background-color: $themeAccentColor !important;
-        opacity: 1;
+      @media #{$hoverMediaRules} {
+        &:hover {
+          background-color: $themeAccentColor !important;
+          opacity: 1;
+        }
       }
     }
     .t-btn {
       transition: all var(--transitionTimeMs);
-      &:hover {
-        background-color: $themeAccentColor !important;
-        opacity: 1;
+      @media #{$hoverMediaRules} {
+        &:hover {
+          background-color: $themeAccentColor !important;
+          opacity: 1;
+        }
       }
     }
     // Product price
@@ -91,9 +97,11 @@
   .t-zoomer__scale,
   .t-zoomer__close {
     transition: all var(--transitionTimeMs);
-    &:hover {
-      background-color: $themeAccentColor !important;
-      opacity: 1;
+    @media #{$hoverMediaRules} {
+      &:hover {
+        background-color: $themeAccentColor !important;
+        opacity: 1;
+      }
     }
   }
   .t-carousel__zoomer__control {
@@ -102,11 +110,13 @@
     .t-carousel__zoomer__arrow__wrapper:before {
       transition: all var(--transitionTimeMs);
     }
-    &:hover {
-      opacity: 1;
-      .t-carousel__zoomer__arrow__wrapper {
-        &:before {
-          background-color: $themeAccentColor !important;
+    @media #{$hoverMediaRules} {
+      &:hover {
+        opacity: 1;
+        .t-carousel__zoomer__arrow__wrapper {
+          &:before {
+            background-color: $themeAccentColor !important;
+          }
         }
       }
     }

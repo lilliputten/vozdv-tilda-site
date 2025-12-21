@@ -26,7 +26,7 @@ function checkMutation(mutation: MutationRecord) {
   }
 }
 
-function initCarriesrAndDoves(hero: HTMLDivElement) {
+function initCarrierAndDoves(hero: HTMLDivElement) {
   const carrier = hero.querySelector<HTMLDivElement>('.t-cover__carrier');
   // Check if cover loaded and init cover
   if (carrier.classList.contains('loaded')) {
@@ -46,13 +46,14 @@ function initCarriesrAndDoves(hero: HTMLDivElement) {
   // Init doves
   // left1
   const left1 = document.createElement('div');
-  left1.classList.add('dove', 'dove-left1');
   left1.style.backgroundImage = `url('${leftImg}')`;
-  carrier.append(left1);
   // left2
-  const left2 = document.createElement('div');
-  left2.style.backgroundImage = `url('${rightImg}')`;
-  const right = left2.cloneNode() as HTMLDivElement; // Using the same image (in the cloned node)
+  const left2 = left1.cloneNode() as HTMLDivElement; // document.createElement('div');
+  // left2.style.backgroundImage = `url('${rightImg}')`;
+  const right = left1.cloneNode() as HTMLDivElement; // Using the same image (in the cloned node)
+  // Adding...
+  left1.classList.add('dove', 'dove-left1');
+  carrier.append(left1);
   left2.classList.add('dove', 'dove-left2');
   carrier.append(left2);
   // right
@@ -75,5 +76,5 @@ export function initHero() {
     return;
   }
 
-  initCarriesrAndDoves(hero);
+  initCarrierAndDoves(hero);
 }

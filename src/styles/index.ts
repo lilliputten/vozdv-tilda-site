@@ -8,8 +8,3 @@ import './AboutShort.scss';
 import './ArticlesPreview.scss';
 import './Feedback.scss';
 import './News.scss';
-
-// import './StoreGrid.scss';
-// import './SubPage.scss';
-// import './Blog.scss';
-// import './StoreProduct.scss';

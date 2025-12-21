@@ -10,10 +10,6 @@ import { initFooterSocials } from './FooterSocials';
 import { initHero } from './Hero';
 import { initNavMenu } from './NavMenu';
 
-// import { initFooterSocials } from './FooterSocials';
-// import { initStoreProduct } from './StoreProduct';
-// import { initSubPage } from './SubPage';
-
 /** Print app info */
 function printAppInfo() {
   const appVersion = process.env.APP_VERSION;
@@ -32,10 +28,6 @@ function initPage() {
   initHero();
   initFooterSocials();
   initArticlesPreview();
-
-  // initSubPage();
-  // initStoreProduct();
-  // initFooterSocials();
 
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));

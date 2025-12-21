@@ -8,15 +8,15 @@
     .t-bgimg {
       transition: opacity $transitionTimeMs;
     }
-    #allrecords &:hover {
-      &,
-      a,
-      .t-feed__post-descr {
-        color: $blueTintedColor !important;
-        text-decoration: underline;
-        opacity: 0.85;
-      }
-      .t-bgimg {
+    @media #{$hoverMediaRules} {
+      #allrecords &:hover {
+        &,
+        a,
+        .t-feed__post-descr {
+          color: $greenDarkColor !important;
+          text-decoration: underline;
+          opacity: 0.85;
+        }
       }
     }
   }

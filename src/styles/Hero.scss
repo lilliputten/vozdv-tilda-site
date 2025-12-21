@@ -55,9 +55,10 @@
   }
   .dove-left2 {
     transition-duration: 1.5s;
+    transform: translate(-100%, -50%) scaleX(-1);
     left: 70%;
     top: 120%;
-    rotate: 20deg;
+    rotate: 10deg;
     &.ready {
       $size: 10vw;
       width: $size;
@@ -72,6 +73,7 @@
   .dove-right {
     transition-delay: 0.5s;
     transition-duration: 1.5s;
+    transform: translate(-100%, -50%) scaleX(-1);
     right: -20%;
     top: 45%;
     &.ready {

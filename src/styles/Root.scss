@@ -3,10 +3,6 @@
 
 /*! Root */
 
-body {
-  // padding-top: $NavHeaderTotalHeight;
-}
-
 .disabled {
   opacity: 0.5;
   pointer-events: none;
@@ -17,10 +13,35 @@ body {
   opacity: 0.5;
 }
 
+// Bottom tilda banner
+
 .t-tildalabel {
   background-color: color.adjust($blueTintedColor, $lightness: -2%);
 }
 
+// Minor block fixes...
+
 .uc-SoleHeader {
   padding-bottom: 0 !important;
+}
+
+.uc-Breadcrumbs {
+  .t-menu__link-item {
+    &,
+    &:hover {
+      color: #aaa;
+    }
+  }
+  a {
+    #allrecords &.t-menu__link-item:hover {
+      color: $greenDarkColor !important;
+      text-decoration: underline;
+    }
+  }
+}
+
+.uc-Visual {
+  .t208__textwrapper {
+    border-radius: 10px;
+  }
 }
