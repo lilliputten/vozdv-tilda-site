@@ -36,7 +36,7 @@ export function processForm(formBottomText: HTMLDivElement) {
 
 export function initConfirmForms() {
   const formBottomTextNodes = document.querySelectorAll<HTMLDivElement>(
-    '[class*="__form-bottom-text"], .uc-FormSmall .t716__hint',
+    '[class*="__form-bottom-text"], .uc-FormCustom .t716__hint, .uc-FormSmall .t716__hint',
   );
   formBottomTextNodes.forEach(processForm);
 }

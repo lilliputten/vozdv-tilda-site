@@ -35,3 +35,5 @@ package-lock.*
 *.tmp
 *.zip
 *.tgz
+
+cert

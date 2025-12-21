@@ -71,11 +71,13 @@
         );
         z-index: -1;
       }
-      &:hover {
-        background-color: color.adjust($blueTintedColor, $lightness: -20%);
-        text-decoration: underline;
-        .bg {
-          opacity: 0.7;
+      @media #{$hoverMediaRules} {
+        &:hover {
+          background-color: color.adjust($blueTintedColor, $lightness: -20%);
+          text-decoration: underline;
+          .bg {
+            opacity: 0.7;
+          }
         }
       }
     }

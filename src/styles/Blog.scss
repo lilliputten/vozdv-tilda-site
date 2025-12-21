@@ -5,8 +5,10 @@
     border-radius: 10px;
     overflow: hidden;
     transition: all var(--transitionTimeMs);
-    &:hover {
-      opacity: 0.85;
+    @media #{$hoverMediaRules} {
+      &:hover {
+        opacity: 0.85;
+      }
     }
   }
 }
