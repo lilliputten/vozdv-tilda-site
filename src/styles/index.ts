@@ -8,3 +8,4 @@ import './AboutShort.scss';
 import './ArticlesPreview.scss';
 import './Feedback.scss';
 import './News.scss';
+import './CatalogIndex.scss';
