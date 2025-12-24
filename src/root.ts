@@ -3,13 +3,14 @@ import './variables/variables-expose.scss';
 import './styles';
 
 import { initArticlesPreview } from './ArticlesPreview';
-import { initCatalogIndex } from './CatalogIndex';
 import { initConfirmForms } from './ConfirmForm';
 import { isDebug } from './core/constants/isDebug';
 import { isDev } from './core/constants/isDev';
 import { initFooterSocials } from './FooterSocials';
 import { initHero } from './Hero';
 import { initNavMenu } from './NavMenu';
+import { initStoreIndex } from './StoreIndex';
+import { initStoreProduct } from './StoreProduct';
 
 /** Print app info */
 function printAppInfo() {
@@ -27,7 +28,8 @@ function initPage() {
   initHero();
   initFooterSocials();
   initArticlesPreview();
-  initCatalogIndex();
+  initStoreIndex();
+  initStoreProduct();
 
   /* // NOTE: This doesn't work
    * initTildaLabel();

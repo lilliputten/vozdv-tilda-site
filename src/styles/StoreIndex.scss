@@ -1,13 +1,13 @@
 @use '../variables' as *;
 
-// NOTE: The styles are combined for both StoreGrid and CatalogIndex blocks!
+// NOTE: The styles are combined for both StoreGrid and StoreIndex blocks!
 
-/* CatalogIndex */
+/* StoreIndex */
 
-// .uc-StoreGrid,
-#allrecords .uc-CatalogIndex {
+.uc-StoreGrid,
+.uc-StoreIndex {
   @include activeLink;
-  a {
+  #allrecords & a {
     color: $primaryColor;
   }
   .t-bgimg,
@@ -35,6 +35,7 @@
       margin-bottom: 15px;
     }
   }
+  .t-store__card,
   .t-item {
     /* // Title
      * .t-cell .t-name,
@@ -44,11 +45,14 @@
      *   }
      * }
      */
+    #allrecords & .t-typography__title {
+      font-weight: normal;
+    }
     // Default (no link): style as disabled
     &,
     .t-name,
     .t-descr,
-    a {
+    #allrecords & a {
       color: #ccc;
     }
     &.has-link {
@@ -65,7 +69,7 @@
       .t-cell .t-name,
       .t-store__card__title {
         &,
-        a {
+        #allrecords & a {
           color: $greenColor;
         }
       }

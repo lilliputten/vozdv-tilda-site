@@ -1,4 +1,4 @@
-import maxWhiteSvg from '../assets/socials/max-white.svg';
+import maxWhiteSvg from '../../assets/socials/max-white.svg';
 
 // import ozonSvg from '../assets/socials/ozon.svg';
 // import wbSvg from '../assets/socials/wb.svg';

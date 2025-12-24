@@ -8,7 +8,7 @@ function itemClick(linkNode: HTMLElement, ev: MouseEvent) {
     // const link = node.querySelector('a');
     // const currentNode = ev.currentTarget as HTMLElement;
     const newEvent = new MouseEvent(ev.type, ev);
-    console.log('CatalogIndex:itemClick', {
+    console.log('StoreIndex:itemClick', {
       nodeTagName,
       newEvent,
       linkNode,
@@ -22,29 +22,48 @@ function itemClick(linkNode: HTMLElement, ev: MouseEvent) {
 }
 
 function initCatalogItem(node: HTMLElement) {
+  if (node.classList.contains('inited')) {
+    return;
+  }
   const link = node.querySelector('a');
+  console.log('StoreIndex:initCatalogItem', {
+    node,
+    link,
+  });
   if (link) {
     const itemClickBound = itemClick.bind(null, link);
     node.addEventListener('click', itemClickBound);
     node.classList.add('has-link');
   }
+  node.classList.add('inited');
 }
 
-export function initCatalogIndex() {
-  const nodeRoot = document.querySelector('.uc-CatalogIndex'); // , .uc-StoreGrid .js-store-grid-cont
+export function initStoreIndex() {
+  const nodeRoot = document.querySelector('.uc-StoreIndex, .uc-StoreGrid .js-store-grid-cont');
   if (!nodeRoot) {
+    console.warn('[StoreIndex] Not found catalogue root');
     return;
   }
-  const items = nodeRoot.querySelectorAll('.t-item, .t-store__card');
+  const items = nodeRoot.querySelectorAll('.t-item'); // , .t-store__card');
+  console.log('[StoreIndex]', {
+    nodeRoot,
+    items,
+  });
   if (items.length) {
     items.forEach(initCatalogItem);
   }
   const observer = new MutationObserver((mutations) => {
-    // console.log('[CatalogIndex:mutations]', { mutations });
+    // console.log('[StoreIndex:mutations]', { mutations });
     mutations.forEach((mutation) => {
       const { type, addedNodes } = mutation;
       if (type === 'childList' && addedNodes.length) {
-        addedNodes.forEach(initCatalogItem);
+        const nodes = Array.from(addedNodes).flatMap((node: HTMLElement) => {
+          if (node.classList.contains('t-item')) {
+            return node;
+          }
+          return Array.from(node.querySelectorAll('.t-item'));
+        });
+        nodes.forEach(initCatalogItem);
       }
     });
   });

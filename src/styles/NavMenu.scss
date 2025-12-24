@@ -18,9 +18,9 @@
     @media (width > $mobileTreshold) {
       display: none;
     }
-    .t-menu-base__imglogo {
-      width: 100%;
-      max-width: 200px;
+    #allrecords & .t-menu-base__imglogo {
+      max-width: 100%;
+      width: 200px;
     }
   }
 }

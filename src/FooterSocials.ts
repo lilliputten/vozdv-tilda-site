@@ -1,6 +1,6 @@
-import { createSvgFromDataUrl } from './helpers/createSvgFromDataUrl';
-import { DeferredPromise } from './helpers/DeferredPromise';
-import { socials } from './shared/socials';
+import { createSvgFromDataUrl } from './core/helpers/createSvgFromDataUrl';
+import { DeferredPromise } from './core/helpers/DeferredPromise';
+import { socials } from './core/shared/socials';
 
 const deferredFooterInited = new DeferredPromise<boolean>();
 
