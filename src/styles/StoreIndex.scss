@@ -7,6 +7,11 @@
 .uc-StoreGrid,
 .uc-StoreIndex {
   @include activeLink;
+  .t-section__descr {
+    @media (width > $mobileTreshold) {
+      max-width: 80%;
+    }
+  }
   #allrecords & a {
     color: $primaryColor;
   }

@@ -65,6 +65,19 @@
   font-family: $defaultFont;
 }
 
+// Search
+.t-search-widget__popup {
+  .t-search-widget__result_product-img {
+    border-radius: 10px;
+  }
+  .t-name {
+    font-size: 1.2rem;
+  }
+  .t-descr {
+    font-size: 1rem;
+  }
+}
+
 // Popups
 .t-popup_show {
   @include activeLink;

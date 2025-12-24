@@ -104,9 +104,7 @@
   .t-feed__post-popup {
     .t-feed__post-popup__cover-wrapper {
       img {
-        // @media (width > $mobileTreshold) {
-          border-radius: 10px;
-        // }
+        border-radius: 10px;
       }
     }
   }
@@ -117,6 +115,14 @@
   border-radius: 100%;
   @include activeButton;
 }
+
+/* // Search widget close
+ * .t985__close-icon {
+ *   padding: 0.5em;
+ *   border-radius: 100%;
+ *   @include activeButton;
+ * }
+ */
 
 // Carousel popup controls
 .t-zoomer__wrapper {
