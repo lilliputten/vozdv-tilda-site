@@ -19,6 +19,15 @@
   .t-img {
     border-radius: 10px;
   }
+  // Font sizes
+  .t-store__card {
+    #allrecords & .t-typography__title {
+      font-size: 1.2rem;
+    }
+    #allrecords & .t-typography__descr {
+      font-size: 1rem;
+    }
+  }
   @media (width <= $mobileTreshold) {
     .t1095__bgimg,
     .t1095__imgwrapper {

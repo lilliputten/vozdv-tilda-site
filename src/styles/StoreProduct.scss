@@ -22,6 +22,7 @@
 }
 
 #allrecords .js-store-product.js-product {
+  // productNode root
   @include basicActiveLink;
   // Customize elements
   .t-name {
@@ -35,6 +36,10 @@
   }
   .js-store-prod-all-text {
     font-size: 1.2rem;
+  }
+  // Articul
+  .t-store__prod-popup__sku {
+    margin-top: 0.75em;
   }
   // Hide the default 'buy' item (will be replaced by the custom one
   .t-store__prod-popup__btn-wrapper {

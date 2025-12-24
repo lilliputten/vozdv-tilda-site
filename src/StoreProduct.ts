@@ -7,33 +7,56 @@ const rubricTitles: Record<string, string> = {
   'fences': 'Цветники, ограды, лавочки',
   'jewelry': 'Ювелирные кресты мастерской Юрия Федорова',
 };
+const rubricIds = Object.keys(rubricTitles);
 
 const catalogUrlPrefix = '/catalog/';
 
 /** Update breadcrumbs section (add the catalogue section link) */
-function addBreadcrumbs() {
+function addBreadcrumbs(productNode: HTMLElement) {
   const breadcrumbsNode = document.querySelector('.uc-Breadcrumbs .t758__list');
   if (!breadcrumbsNode) {
     return;
   }
+  const skuNode = productNode.querySelector('.js-store-prod-sku');
+  const skuId = skuNode?.innerHTML.trim();
+  // Future rubric id (from pathname or sku id)
+  let rubricId = '';
   // Parse title string
   const { pathname } = window.location;
-  const match = pathname.match(/^((.*)\/([A-z0-9_-]+))\/(tproduct\/.*)$/);
-  const [
-    _,
-    rubricUrl,
-    productsUrl = '/products',
-    rubricId = '',
-    // itemUrl,
-  ] = match;
-  const rubricTitle = quoteHtmlAttr(rubricTitles[rubricId]);
+  const pathNameMatch = pathname.match(/^((.*)\/([A-z0-9_-]+))\/(tproduct\/.*)$/);
+  if (pathNameMatch) {
+    const [
+      _,
+      _rubricUrl,
+      _productsUrl = '/products',
+      pathnameId = '',
+      // _itemUrl,
+    ] = pathNameMatch;
+    rubricId = pathnameId;
+  }
+  let rubricTitle = quoteHtmlAttr(rubricTitles[rubricId] || '');
+  if ((!rubricId || !rubricTitle) && skuId) {
+    for (const id of rubricIds) {
+      if (skuId.startsWith(id)) {
+        rubricId = id;
+        rubricTitle = quoteHtmlAttr(rubricTitles[rubricId] || '');
+        break;
+      }
+    }
+  }
+  console.log('[StoreProduct:addBreadcrumbs]', {
+    rubricTitle,
+    rubricId,
+    skuId,
+    pathNameMatch,
+    pathname,
+  });
   if (!rubricTitle || !rubricId) {
     // eslint-disable-next-line no-console
     console.warn('[StoreProduct:addBreadcrumbs] Cannot find parse catalog product pathname', {
-      rubricUrl,
-      productsUrl,
       rubricId,
-      match,
+      skuId,
+      pathNameMatch,
       pathname,
     });
     debugger; // eslint-disable-line no-debugger
@@ -127,7 +150,7 @@ export function initStoreProduct() {
   }
   // Only if product page has been found, else do nothing
   const rightColumn = productNode.querySelector<HTMLElement>('.t-store__prod-popup__col-right');
-  addBreadcrumbs();
+  addBreadcrumbs(productNode);
   appendActionsAndLabels(rightColumn);
   addProductTitleToForms();
   cloneTitleToTheTop(productNode);

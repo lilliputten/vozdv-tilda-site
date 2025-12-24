@@ -48,6 +48,8 @@ $extraWideTreshold: 1400px;
 $wideTreshold: 1200px;
 $mobileTreshold: 960px;
 $smallTreshold: 660px;
+// Used in SubPage, for product image adaptive styling
+$tinyTreshold: 560px;
 
 // Hover media constant, use like `@media #{$hoverMediaRules} { ... }`
 

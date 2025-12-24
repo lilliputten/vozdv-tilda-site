@@ -26,10 +26,6 @@ function initCatalogItem(node: HTMLElement) {
     return;
   }
   const link = node.querySelector('a');
-  console.log('StoreIndex:initCatalogItem', {
-    node,
-    link,
-  });
   if (link) {
     const itemClickBound = itemClick.bind(null, link);
     node.addEventListener('click', itemClickBound);

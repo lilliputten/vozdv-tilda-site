@@ -7,7 +7,6 @@
   opacity: 1;
 }
 @mixin activeButton {
-  // border-radius: 100%;
   transition: all var(--transitionTimeMs);
   @media #{$hoverMediaRules} {
     &:hover {
@@ -84,10 +83,10 @@
   .t-slds__main,
   .t-slds__container,
   .t-slds__bgimg {
-    @media (width <= $smallTreshold) {
+    @media (width <= $tinyTreshold) {
       border-radius: 0;
     }
-    @media (width > $smallTreshold) {
+    @media (width > $tinyTreshold) {
       border-radius: 10px;
     }
   }
