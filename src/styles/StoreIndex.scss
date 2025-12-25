@@ -1,24 +1,42 @@
 @use '../variables' as *;
 
-// NOTE: The styles are combined for both StoreGrid and StoreIndex blocks!
-
 /* StoreIndex */
 
-.uc-StoreGrid,
 .uc-StoreIndex {
   @include activeLink;
-  .t-section__descr {
-    @media (width > $mobileTreshold) {
-      max-width: 80%;
-    }
-  }
-  #allrecords & a {
-    color: $primaryColor;
-  }
   .t-bgimg,
   .t-img {
     border-radius: 10px;
   }
+  // Update image sizes for small screens
+  @media (width <= $mobileTreshold) {
+    .t-name,
+    .t-descr {
+      text-align: center;
+    }
+    $mobileSize: 200px;
+    .t-item {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      > * {
+        padding-left: 0 !important;
+      }
+      > *:first-child {
+        max-width: 100%;
+        display: block;
+        margin-bottom: 15px;
+      }
+    }
+    .t-bgimg {
+      width: $mobileSize !important;
+      height: $mobileSize !important;
+      max-width: 100%;
+      max-height: $mobileSize;
+    }
+  }
+  /*
   // Font sizes
   .t-store__card {
     #allrecords & .t-typography__title {
@@ -28,77 +46,5 @@
       font-size: 1rem;
     }
   }
-  @media (width <= $mobileTreshold) {
-    .t1095__bgimg,
-    .t1095__imgwrapper {
-      $mobileSize: 100px;
-      max-width: $mobileSize;
-      max-height: $mobileSize;
-    }
-  }
-  @media (width <= $smallTreshold) {
-    .t-store__card {
-      flex-direction: column;
-    }
-    .t-store__card__imgwrapper_column {
-      margin-bottom: 15px;
-    }
-    .t-item .t-cell:first-child {
-      display: block;
-      margin-left: 20px;
-      margin-bottom: 15px;
-    }
-  }
-  .t-store__card,
-  .t-item {
-    /* // Title
-     * .t-cell .t-name,
-     * .t-store__card__title {
-     *   &:after {
-     *     @include SectionTitleDelim($size: 2px, $width: 200px, $left: true);
-     *   }
-     * }
-     */
-    #allrecords & .t-typography__title {
-      font-weight: normal;
-    }
-    // Default (no link): style as disabled
-    &,
-    .t-name,
-    .t-descr,
-    #allrecords & a {
-      color: #ccc;
-    }
-    &.has-link {
-      cursor: pointer;
-      transition: all var(--transitionTimeMs);
-      $color: #333;
-      &,
-      .t-name,
-      .t-descr,
-      a {
-        color: $color;
-        opacity: 1;
-      }
-      .t-cell .t-name,
-      .t-store__card__title {
-        &,
-        #allrecords & a {
-          color: $greenColor;
-        }
-      }
-      @media #{$hoverMediaRules} {
-        &:hover {
-          opacity: 0.85;
-          &,
-          .t-name,
-          .t-descr,
-          a {
-            color: $greenDarkColor !important;
-            text-decoration: underline !important;
-          }
-        }
-      }
-    }
-  }
+  */
 }

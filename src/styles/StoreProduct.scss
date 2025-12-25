@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:math';
 
 @use '../variables' as *;
 
@@ -13,15 +14,14 @@
 
 .uc-ProductBadges,
 .uc-ProductActions {
-  // margin: 0;
-  // padding: 0 !important;
   .t142A__wrapper {
     justify-content: flex-start;
     padding: 0;
   }
 }
 
-#allrecords .js-store-product.js-product {
+// Product card
+.js-store-product.js-product {
   // productNode root
   @include basicActiveLink;
   // Customize elements
@@ -54,7 +54,39 @@
     margin-bottom: 40px;
     display: none;
   }
+  .t-store__prod-popup__sku {
+    opacity: 70%;
+  }
+  // DEBUG
+  .t-store__prod-popup__slider {
+  }
+  // Adjust preview size
+  .t-slds__thumbsbullet-wrapper,
+  .t-slds__main {
+    @media (width <= $mobileTreshold) {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .t-slds__container,
+  .t-slds__imgwrapper {
+    @mixin setPortraitWidth($width) {
+      width: $width; // 300px;
+      height: math.div($width * 4, 3); // 400px;
+    }
+    @include setPortraitWidth(400px);
+    @media (width <= $smallTreshold) {
+      @include setPortraitWidth(300px);
+    }
+    @media (width <= $tinyTreshold) {
+      @include setPortraitWidth(200px);
+    }
+  }
   @media (width <= $smallTreshold) {
+    .t-store__prod-popup__col-left {
+      padding: 0 20px;
+    }
     // Diplay top title instead of inner one
     .MobileTitle {
       display: block;
@@ -85,9 +117,6 @@
     }
     .Buttons {
       padding: 0;
-      .t142A__wraptwo {
-        flex-direction: column;
-      }
       .t-btn {
         flex: 1;
         padding: 15px;
@@ -102,66 +131,4 @@
       }
     }
   }
-
-  /* // UNUSED?
-  .js-store-tabs {
-    // Hide tabs at first
-    opacity: 0;
-    pointer-events: none;
-  }
-  .DetailsWrapper {
-    margin: 1em 0;
-    .t-descr {
-      color: #999;
-    }
-  }
-  .Variants {
-    margin: 1em 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    .Variant {
-      border-radius: 7px;
-      box-sizing: content-box;
-      border: 2px solid transparent;
-      transition: all var(--transitionTimeMs);
-      &.Current {
-        opacity: 0.5;
-        background-color: $primaryColor;
-        border-color: $primaryColor;
-      }
-      img {
-        background-color: #ccc;
-        border: 2px solid transparent;
-        transition: all var(--transitionTimeMs);
-        display: block;
-        height: 120px;
-        width: auto;
-        border-radius: 5px;
-        overflow: hidden;
-      }
-    }
-    .Variant.Current img,
-    a.Variant:hover img {
-      border: 2px solid $primaryColor;
-    }
-    .Variant.Current img {
-      background-color: $primaryColor;
-    }
-  }
-  // Buttons
-  .t-store__prod-popup__btn-wrapper {
-    a[data-social-id] {
-      display: inline-block;
-      vertical-align: middle;
-      user-select: none;
-      margin: 0 0.2em;
-      &,
-      & > svg {
-        width: 45px;
-        height: 45px;
-      }
-    }
-  }
-  */
 }

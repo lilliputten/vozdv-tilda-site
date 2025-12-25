@@ -9,5 +9,7 @@ import './ArticlesPreview.scss';
 import './Feedback.scss';
 import './News.scss';
 import './SubPage.scss';
+import './StoreCommon.scss';
 import './StoreIndex.scss';
+import './StoreGrid.scss';
 import './StoreProduct.scss';

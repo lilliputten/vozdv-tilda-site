@@ -1,30 +1,52 @@
 @use '../variables' as *;
 
-#allrecords .uc-StoreGrid {
+.uc-StoreGrid {
   @include basicActiveLink;
-  .js-product-img {
-    border-radius: 10px;
+  // Update description widths
+  .t-section__descr {
+    @media (width > $mobileTreshold) {
+      #allrecords & {
+        margin-bottom: 45px;
+      }
+      max-width: 80%;
+    }
   }
-  .js-product-price {
-    font-size: 1.3em;
-  }
-  .t-store__card__price-currency {
-    font-size: 0.75em;
-  }
-  .t-store__card__price-currency {
-    margin-top: 10px;
-  }
+  // Adjust layout for more taller images
   .t-store__card__imgwrapper {
-    // Adjust layout for more taller images
     padding-bottom: 135%;
   }
-  .t-btn {
-    transition: all var(--transitionTimeMs);
-    @media #{$hoverMediaRules} {
-      &:hover {
-        background-color: $themeAccentColor !important;
-        opacity: 1;
+  .t-store__card-list {
+    row-gap: 30px !important;
+  }
+  // Minimal treshold (the single column)
+  @media (width <= $microTreshold) {
+    .t-store__card {
+      align-items: center;
+      > *:first-child {
+        width: 200px;
+        max-width: 100%;
       }
     }
   }
+  /* // UNUSED: In this project (prices, buttons)
+   * .js-product-img {
+   *   border-radius: 10px;
+   * }
+   * .js-product-price {
+   *   font-size: 1.3em;
+   * }
+   * .t-store__card__price-currency {
+   *   font-size: 0.75em;
+   *   margin-top: 10px;
+   * }
+   * .t-btn {
+   *   transition: all var(--transitionTimeMs);
+   *   @media #{$hoverMediaRules} {
+   *     &:hover {
+   *       background-color: $themeAccentColor !important;
+   *       opacity: 1;
+   *     }
+   *   }
+   * }
+   */
 }

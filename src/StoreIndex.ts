@@ -8,15 +8,16 @@ function itemClick(linkNode: HTMLElement, ev: MouseEvent) {
     // const link = node.querySelector('a');
     // const currentNode = ev.currentTarget as HTMLElement;
     const newEvent = new MouseEvent(ev.type, ev);
-    console.log('StoreIndex:itemClick', {
-      nodeTagName,
-      newEvent,
-      linkNode,
-      // currentNode,
-      // link,
-      node,
-      ev,
-    });
+    /* console.log('StoreIndex:itemClick', {
+     *   nodeTagName,
+     *   newEvent,
+     *   linkNode,
+     *   // currentNode,
+     *   // link,
+     *   node,
+     *   ev,
+     * });
+     */
     linkNode.dispatchEvent(newEvent);
   }
 }
@@ -37,14 +38,11 @@ function initCatalogItem(node: HTMLElement) {
 export function initStoreIndex() {
   const nodeRoot = document.querySelector('.uc-StoreIndex, .uc-StoreGrid .js-store-grid-cont');
   if (!nodeRoot) {
+    // eslint-disable-next-line no-console
     console.warn('[StoreIndex] Not found catalogue root');
     return;
   }
   const items = nodeRoot.querySelectorAll('.t-item'); // , .t-store__card');
-  console.log('[StoreIndex]', {
-    nodeRoot,
-    items,
-  });
   if (items.length) {
     items.forEach(initCatalogItem);
   }

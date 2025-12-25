@@ -83,12 +83,12 @@
   .t-slds__main,
   .t-slds__container,
   .t-slds__bgimg {
-    @media (width <= $tinyTreshold) {
-      border-radius: 0;
-    }
-    @media (width > $tinyTreshold) {
-      border-radius: 10px;
-    }
+    // @media (width <= $tinyTreshold) {
+    //   border-radius: 0;
+    // }
+    // @media (width > $tinyTreshold) {
+    border-radius: 10px;
+    // }
   }
   .t-slds__thumbsbullet,
   .t-slds__thumbsbullet-border,

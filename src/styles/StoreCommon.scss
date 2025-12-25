@@ -1,0 +1,65 @@
+@use '../variables' as *;
+
+/* StoreCommon */
+
+// Common over-catlogue links' styles
+.uc-StoreGrid,
+.uc-StoreIndex {
+  @include activeLink;
+  // Texts
+  .t-title,
+  .t-name,
+  .t-descr {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .t-cell,
+  .t-store__card__wrap_txt-and-btns {
+    max-width: 100%;
+  }
+  // Adjust links
+  .t-item {
+    #allrecords & .t-typography__title {
+      font-weight: normal;
+    }
+    // Default (no link): style as disabled
+    &,
+    .t-name,
+    .t-descr,
+    #allrecords & a {
+      color: #ccc;
+    }
+    &.has-link {
+      cursor: pointer;
+      transition: all var(--transitionTimeMs);
+      $color: #333;
+      &,
+      .t-name,
+      .t-descr,
+      a {
+        color: $color;
+        opacity: 1;
+      }
+      .t-cell .t-name,
+      .t-store__card__title {
+        &,
+        #allrecords & a {
+          color: $greenColor;
+        }
+      }
+      @media #{$hoverMediaRules} {
+        &:hover {
+          opacity: 0.85;
+          &,
+          .t-name,
+          .t-descr,
+          a {
+            color: $greenDarkColor !important;
+            text-decoration: underline !important;
+          }
+        }
+      }
+    }
+  }
+}
+

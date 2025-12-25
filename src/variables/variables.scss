@@ -50,6 +50,8 @@ $mobileTreshold: 960px;
 $smallTreshold: 660px;
 // Used in SubPage, for product image adaptive styling
 $tinyTreshold: 560px;
+// Used for adaptive StoreGrid layout (the minimal t-store__card treshold: the single column)
+$microTreshold: 480px;
 
 // Hover media constant, use like `@media #{$hoverMediaRules} { ... }`
 
