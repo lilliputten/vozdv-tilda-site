@@ -2,17 +2,41 @@
 
 /* StoreIndex */
 
+// Hide clonable source elements.
+#t-footer {
+  // Those tho are just service containers, their content should be used only in product item cards.
+  .uc-StoreIndexActions {
+    display: none;
+  }
+}
+// Adjust cloned buttons
+.uc-StoreIndexActions {
+  .t142A__wrapper {
+    justify-content: flex-start;
+    padding: 0;
+  }
+}
+
 .uc-StoreIndex {
   @include activeLink;
   .t-bgimg,
   .t-img {
     border-radius: 10px;
   }
+  @media (width > $mobileTreshold) {
+    .t-item {
+      display: flex;
+      align-items: center;
+    }
+  }
   // Update image sizes for small screens
   @media (width <= $mobileTreshold) {
     .t-name,
     .t-descr {
       text-align: center;
+    }
+    .t142A__wrapper {
+      justify-content: center;
     }
     $mobileSize: 200px;
     .t-item {

@@ -11,7 +11,7 @@
     display: none;
   }
 }
-
+// Adjust cloned buttons
 .uc-ProductBadges,
 .uc-ProductActions {
   .t142A__wrapper {
@@ -57,30 +57,29 @@
   .t-store__prod-popup__sku {
     opacity: 70%;
   }
-  // DEBUG
-  .t-store__prod-popup__slider {
-  }
-  // Adjust preview size
-  .t-slds__thumbsbullet-wrapper,
-  .t-slds__main {
-    @media (width <= $mobileTreshold) {
-      text-align: center;
-      display: flex;
-      justify-content: center;
+  // Adjust preview column size
+  @media (width <= $wideTreshold) {
+    .t-slds__thumbsbullet-wrapper,
+    .t-slds__main {
+      @media (width <= $mobileTreshold) {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
     }
-  }
-  .t-slds__container,
-  .t-slds__imgwrapper {
-    @mixin setPortraitWidth($width) {
-      width: $width; // 300px;
-      height: math.div($width * 4, 3); // 400px;
-    }
-    @include setPortraitWidth(400px);
-    @media (width <= $smallTreshold) {
-      @include setPortraitWidth(300px);
-    }
-    @media (width <= $tinyTreshold) {
-      @include setPortraitWidth(200px);
+    .t-slds__container,
+    .t-slds__imgwrapper {
+      @mixin setPortraitWidth($width) {
+        width: $width; // 300px;
+        height: math.div($width * 4, 3); // 400px;
+      }
+      @include setPortraitWidth(360px);
+      @media (width <= $smallTreshold) {
+        @include setPortraitWidth(280px);
+      }
+      @media (width <= $tinyTreshold) {
+        @include setPortraitWidth(200px);
+      }
     }
   }
   @media (width <= $smallTreshold) {

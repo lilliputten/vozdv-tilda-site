@@ -35,7 +35,7 @@
     opacity: 0;
     &.ready {
       opacity: 1;
-      @media (width <= 500px) {
+      @media (width <= 800px) {
         opacity: 0;
       }
     }
@@ -50,9 +50,6 @@
       height: $size;
       left: 15%;
       top: 70%;
-      @media (width <= 800px) {
-        opacity: 0;
-      }
     }
   }
   .dove-left2 {

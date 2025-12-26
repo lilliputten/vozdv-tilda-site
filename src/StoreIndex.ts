@@ -22,7 +22,7 @@ function itemClick(linkNode: HTMLElement, ev: MouseEvent) {
   }
 }
 
-function initCatalogItem(node: HTMLElement) {
+function initCatalogItem(isIndex: boolean, node: HTMLElement) {
   if (node.classList.contains('inited')) {
     return;
   }
@@ -31,20 +31,27 @@ function initCatalogItem(node: HTMLElement) {
     const itemClickBound = itemClick.bind(null, link);
     node.addEventListener('click', itemClickBound);
     node.classList.add('has-link');
+    // Append buttons to the StoreIndex items
+    if (isIndex) {
+      const wrapper = node.querySelector('.t1095__textwrapper');
+      if (wrapper) {
+        const actionsNode = document.querySelector('.uc-StoreIndexActions'); // ?.cloneNode(true) as Element; // Clone to debug original node
+        if (actionsNode) {
+          actionsNode.classList.add('Buttons', 'Actions');
+          wrapper.append(actionsNode.cloneNode(true));
+        }
+      }
+    }
   }
   node.classList.add('inited');
 }
 
-export function initStoreIndex() {
-  const nodeRoot = document.querySelector('.uc-StoreIndex, .uc-StoreGrid .js-store-grid-cont');
-  if (!nodeRoot) {
-    // eslint-disable-next-line no-console
-    console.warn('[StoreIndex] Not found catalogue root');
-    return;
-  }
+export function initStoreIndexWrapper(nodeRoot: Element) {
+  const isIndex = nodeRoot.classList.contains('uc-StoreIndex');
+  const initCb = initCatalogItem.bind(undefined, isIndex);
   const items = nodeRoot.querySelectorAll('.t-item'); // , .t-store__card');
   if (items.length) {
-    items.forEach(initCatalogItem);
+    items.forEach(initCb);
   }
   const observer = new MutationObserver((mutations) => {
     // console.log('[StoreIndex:mutations]', { mutations });
@@ -57,11 +64,16 @@ export function initStoreIndex() {
           }
           return Array.from(node.querySelectorAll('.t-item'));
         });
-        nodes.forEach(initCatalogItem);
+        nodes.forEach(initCb);
       }
     });
   });
   observer.observe(nodeRoot, {
     childList: true,
   });
+}
+
+export function initStoreIndex() {
+  const nodeRoots = document.querySelectorAll('.uc-StoreIndex, .uc-StoreGrid .js-store-grid-cont');
+  nodeRoots.forEach(initStoreIndexWrapper);
 }

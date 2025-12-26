@@ -23,10 +23,9 @@
       font-weight: normal;
     }
     // Default (no link): style as disabled
-    &,
     .t-name,
     .t-descr,
-    #allrecords & a {
+    #allrecords & a:not(.t-btn) {
       color: #ccc;
     }
     &.has-link {
@@ -49,17 +48,19 @@
       }
       @media #{$hoverMediaRules} {
         &:hover {
-          opacity: 0.85;
-          &,
+          .t-bgimg,
+          img {
+            opacity: 0.85;
+          }
           .t-name,
           .t-descr,
-          a {
+          a:not(.t-btn) {
             color: $greenDarkColor !important;
             text-decoration: underline !important;
+            text-decoration-thickness: 1px;
           }
         }
       }
     }
   }
 }
-
