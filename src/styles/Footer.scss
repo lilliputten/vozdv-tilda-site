@@ -4,8 +4,13 @@
 
 .uc-Footer {
   @include activeLink;
+  .t-sociallinks__wrapper {
+    clear: both;
+    @media (width > $mobileTreshold) {
+      text-align: right;
+    }
+  }
   .t-sociallinks__item {
-    // margin: 0 0.25em;
     svg {
       $size: 33px;
       width: $size;

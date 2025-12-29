@@ -28,6 +28,12 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 10px 50px;
+    .t-menu-base__leftwrapper {
+      margin-left: 20px;
+    }
+    .t-menu-base__rightwrapper {
+      margin-right: 20px;
+    }
     &:before,
     &:after {
       display: none;

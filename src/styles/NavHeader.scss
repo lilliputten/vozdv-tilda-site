@@ -62,6 +62,7 @@
   @media (width > $mobileTreshold) {
     .t-menu-base__logo {
       padding-top: 8px;
+      margin-left: 15px;
       img {
         max-width: 300px;
       }
@@ -77,11 +78,16 @@
     .t-col {
       width: auto;
       margin-top: 0;
+      margin-right: 5px;
+      // border: 1px solid red; // DEBUG
     }
   }
   @media (width > $wideTreshold) {
     .t820.t-container {
       margin: 0 auto;
+    }
+    .t-col {
+      margin-left: 10%;
     }
   }
 }
