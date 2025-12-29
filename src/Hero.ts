@@ -1,6 +1,3 @@
-import leftImg from './assets/hero-doves/dove-left1.png';
-import rightImg from './assets/hero-doves/dove-right.png';
-
 function initHeroCover(carrier: HTMLDivElement) {
   const { dataset } = carrier;
   const backgroundImage = carrier.style.backgroundImage; // Current background image
@@ -26,7 +23,7 @@ function checkMutation(mutation: MutationRecord) {
   }
 }
 
-function initCarriesrAndDoves(hero: HTMLDivElement) {
+function initCarrierAndDoves(hero: HTMLDivElement, doveLeft: HTMLImageElement) {
   const carrier = hero.querySelector<HTMLDivElement>('.t-cover__carrier');
   // Check if cover loaded and init cover
   if (carrier.classList.contains('loaded')) {
@@ -44,21 +41,17 @@ function initCarriesrAndDoves(hero: HTMLDivElement) {
   }
   initHeroCover(carrier);
   // Init doves
-  // left1
-  const left1 = document.createElement('div');
+  const left1 = doveLeft.cloneNode() as HTMLDivElement; // document.createElement('div');
+  const left2 = left1.cloneNode() as HTMLDivElement; // document.createElement('div');
+  const right = left1.cloneNode() as HTMLDivElement; // Using the same image (in the cloned node)
+  // Adding...
   left1.classList.add('dove', 'dove-left1');
-  left1.style.backgroundImage = `url('${leftImg}')`;
   carrier.append(left1);
-  // left2
-  const left2 = document.createElement('div');
-  left2.style.backgroundImage = `url('${rightImg}')`;
-  const right = left2.cloneNode() as HTMLDivElement; // Using the same image (in the cloned node)
   left2.classList.add('dove', 'dove-left2');
   carrier.append(left2);
-  // right
   right.classList.add('dove', 'dove-right');
   carrier.append(right);
-  // Animate...
+  // Animate appearance...
   requestAnimationFrame(() => {
     left1.classList.add('ready');
     left2.classList.add('ready');
@@ -75,5 +68,14 @@ export function initHero() {
     return;
   }
 
-  initCarriesrAndDoves(hero);
+  const doveLeft = document.querySelector<HTMLImageElement>('.uc-dove-left .t-img');
+  if (!doveLeft) {
+    // eslint-disable-next-line no-console
+    console.warn('[Hero] Dove image not found', {
+      doveLeft,
+    });
+    return;
+  }
+
+  initCarrierAndDoves(hero, doveLeft);
 }

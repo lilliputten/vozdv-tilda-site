@@ -1,0 +1,25 @@
+@use '../variables' as *;
+
+/*! Footer */
+
+.uc-Footer {
+  @include activeLink;
+  .t-sociallinks__wrapper {
+    clear: both;
+    @media (width > $mobileTreshold) {
+      text-align: right;
+    }
+  }
+  .t-sociallinks__item {
+    svg {
+      $size: 33px;
+      width: $size;
+      height: $size;
+    }
+  }
+  /* // Sample for stylize of specific social link
+   * a[href^="https://ozon.ru/"] {
+   *   border: 1px solid red;
+   * }
+   */
+}

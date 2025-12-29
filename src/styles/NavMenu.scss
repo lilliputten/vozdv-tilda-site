@@ -1,6 +1,8 @@
 @use '../variables' as *;
 
-#allrecords .uc-NavMenu {
+/*! NavMenu */
+
+.uc-NavMenu {
   overflow: hidden;
   // NOTE: It must be updated dynamically (see `NavMenu:updateNavMenuHeight`). Thise height values are just initial ones.
   height: 88px;
@@ -16,9 +18,25 @@
     @media (width > $mobileTreshold) {
       display: none;
     }
-    .t-menu-base__imglogo {
-      width: 100%;
-      max-width: 200px;
+    #allrecords & .t-menu-base__imglogo {
+      max-width: 100%;
+      width: 200px;
+    }
+  }
+  .t-menu-base__maincontainer > .t-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 50px;
+    .t-menu-base__leftwrapper {
+      margin-left: 20px;
+    }
+    .t-menu-base__rightwrapper {
+      margin-right: 20px;
+    }
+    &:before,
+    &:after {
+      display: none;
     }
   }
 }

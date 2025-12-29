@@ -1,0 +1,27 @@
+@use '../variables' as *;
+
+/*! News */
+
+.uc-NewsList,
+.uc-News {
+  .js-feed-post {
+    &,
+    .t-bgimg {
+      transition: opacity $transitionTimeMs;
+    }
+    @media #{$hoverMediaRules} {
+      #allrecords &:hover {
+        &,
+        a,
+        .t-feed__post-descr {
+          color: $greenDarkColor !important;
+          text-decoration: underline;
+          opacity: 0.85;
+        }
+      }
+    }
+  }
+  .t-feed__buttons-wrapper {
+    @include activeLink;
+  }
+}

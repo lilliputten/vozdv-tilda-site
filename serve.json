@@ -5,7 +5,15 @@
       "source": "**/*",
       "headers": [
         { "key": "Test", "value": "Value" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Origin", "value": "http://localhost" },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Private-Network",
+          "value": "true"
+        },
         {
           "key": "Access-Control-Allow-Headers",
           "value": "Origin, X-Requested-With, Content-Type, Accept"

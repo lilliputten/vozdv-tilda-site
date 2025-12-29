@@ -5,8 +5,8 @@
 
 # Православная мастерская «Воздвижение»
 
-- Version: 0.0.0
-- Last changes timestamp: 2025.12.18 22:01:06 +0300
+- Version: 0.0.1
+- Last changes timestamp: 2025.12.29 22:41:41 +0300
 
 Изготовление и установка могильных и поклонных крестов, православных ювелирных изделий, цветников, оград, лавочек
 
@@ -28,6 +28,7 @@ Site: https://vozdv.ru/
 ![gold: #fb0](https://badgen.net/badge/gold/%23fb0/fb0)
 ![gold-dark: #f90](https://badgen.net/badge/gold-dark/%23f90/f90)
 ![blue-light: #3ae](https://badgen.net/badge/blue-light/%233ae/3ae)
+![blue-dark3: #157](https://badgen.net/badge/blue-light/%23057/057)
 ![blue-tinted: #135](https://badgen.net/badge/blue-tinted/%23135/135)
 
 ## Fonts

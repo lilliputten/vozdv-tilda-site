@@ -39,7 +39,8 @@ const outPath = isDev ? 'build-dev' : 'build';
 const scriptsAssetFile = 'scripts.js';
 const stylesAssetFile = 'styles.css';
 
-const localServerPrefix = 'http://localhost:3000/';
+const localServerPrefix = 'http://localhost:3000/'; // Default, for raw serve
+// const localServerPrefix = 'https://localhost:3443/'; // Secure via https, using `https-server.ts`
 
 // @see https://webpack.js.org/configuration/devtool/#devtool
 const devtool = isDev

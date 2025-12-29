@@ -1,5 +1,7 @@
 @use '../variables' as *;
 
+/*! Hero */
+
 #allrecords .uc-Hero {
   // Links...
   @include basicActiveLink;
@@ -33,7 +35,7 @@
     opacity: 0;
     &.ready {
       opacity: 1;
-      @media (width <= 500px) {
+      @media (width <= 800px) {
         opacity: 0;
       }
     }
@@ -48,16 +50,14 @@
       height: $size;
       left: 15%;
       top: 70%;
-      @media (width <= 800px) {
-        opacity: 0;
-      }
     }
   }
   .dove-left2 {
     transition-duration: 1.5s;
+    transform: translate(-100%, -50%) scaleX(-1);
     left: 70%;
     top: 120%;
-    rotate: 20deg;
+    rotate: 10deg;
     &.ready {
       $size: 10vw;
       width: $size;
@@ -72,6 +72,7 @@
   .dove-right {
     transition-delay: 0.5s;
     transition-duration: 1.5s;
+    transform: translate(-100%, -50%) scaleX(-1);
     right: -20%;
     top: 45%;
     &.ready {

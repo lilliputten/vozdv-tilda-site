@@ -5,10 +5,11 @@ import * as cssVariables from './variables-export.scss';
 const vars = cssVariables as TCssVariables;
 
 const {
-  // prettier-ignore
-  blockNavHeader,
-  blockTopMenu,
+  // Colors
+  primaryColor,
+  blueTintedDarkenColor,
 
+  // Tresholds
   extraWideTreshold,
   wideTreshold,
   mobileTreshold,
@@ -22,8 +23,8 @@ const smallTresholdPx = parseInt(smallTreshold);
 
 // See pre-exports in `variables-export.scss`
 export interface TCssVariables {
-  blockNavHeader: string;
-  blockTopMenu: string;
+  primaryColor: string;
+  blueTintedDarkenColor: string;
 
   extraWideTreshold: string;
   extraWideTresholdPx: number;
@@ -36,9 +37,9 @@ export interface TCssVariables {
 }
 
 export {
-  // Block ids...
-  blockNavHeader,
-  blockTopMenu,
+  // Colors
+  primaryColor,
+  blueTintedDarkenColor,
 
   // Tresholds as is...
   extraWideTreshold,

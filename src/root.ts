@@ -2,21 +2,19 @@ import './project-info.scss';
 import './variables/variables-expose.scss';
 import './styles';
 
+import { initArticlesPreview } from './ArticlesPreview';
 import { initConfirmForms } from './ConfirmForm';
 import { isDebug } from './core/constants/isDebug';
 import { isDev } from './core/constants/isDev';
+import { initFooterSocials } from './FooterSocials';
 import { initHero } from './Hero';
 import { initNavMenu } from './NavMenu';
-
-// import { initFooterSocials } from './FooterSocials';
-// import { initStoreProduct } from './StoreProduct';
-// import { initSubPage } from './SubPage';
+import { initStoreIndex } from './StoreIndex';
+import { initStoreProduct } from './StoreProduct';
 
 /** Print app info */
 function printAppInfo() {
   const appVersion = process.env.APP_VERSION;
-  // const isDebug = process.env.DEBUG;
-  // const isDev = process.env.DEV;
   // eslint-disable-next-line no-console
   const consoleMethod = isDebug || isDev ? console.warn : console.log;
   consoleMethod.call(console, appVersion);
@@ -28,9 +26,14 @@ function initPage() {
   initConfirmForms();
   initNavMenu();
   initHero();
-  // initSubPage();
-  // initStoreProduct();
-  // initFooterSocials();
+  initFooterSocials();
+  initArticlesPreview();
+  initStoreIndex();
+  initStoreProduct();
+
+  /* // NOTE: This doesn't work
+   * initTildaLabel();
+   */
 
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));

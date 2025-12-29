@@ -1,0 +1,87 @@
+@use 'sass:color';
+@use '../variables' as *;
+
+/*! ArticlesPreview */
+
+.uc-ArticlesPreview {
+  #allrecords & .t-card__container {
+    row-gap: 30px;
+  }
+
+  #allrecords & .t-section__descr {
+    margin-bottom: 60px;
+  }
+
+  #allrecords & .t-section__title {
+    // Header container
+    margin-bottom: 80px;
+  }
+  .t-section__bottomwrapper {
+    // Button container
+    @include activeLink;
+    margin-top: 45px;
+  }
+
+  .t-card__col {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    img {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 0;
+      margin: -1;
+    }
+    > div {
+      position: relative;
+      z-index: 1;
+      padding-top: 160px;
+      padding-bottom: 20px;
+      background-color: $blueTintedColor;
+      transition: all $transitionTimeMs;
+      border-radius: 20px;
+      flex: 1;
+      overflow: hidden;
+      &,
+      > div {
+        color: #fff;
+      }
+      @media (width <= $mobileTreshold) {
+        padding-top: 100px;
+      }
+      .gr,
+      .bg {
+        transition: all $transitionTimeMs;
+        position: absolute;
+        inset: 0;
+      }
+      .bg {
+        background-repeat: no-repeat;
+        background-size: 100% auto; // contain;
+        background-position: top center;
+        z-index: -2;
+      }
+      .gr {
+        background: linear-gradient(
+          195deg,
+          color.change($blueTintedColor, $alpha: 0.4),
+          $blueTintedColor min(50%, 400px)
+        );
+        z-index: -1;
+      }
+      @media #{$hoverMediaRules} {
+        &:hover {
+          background-color: color.adjust($blueTintedColor, $lightness: -20%);
+          text-decoration: underline;
+          .bg {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}

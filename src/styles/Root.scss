@@ -1,8 +1,7 @@
+@use 'sass:color';
 @use '../variables' as *;
 
-body {
-  // padding-top: $NavHeaderTotalHeight;
-}
+/*! Root */
 
 .disabled {
   opacity: 0.5;
@@ -14,6 +13,76 @@ body {
   opacity: 0.5;
 }
 
-.t-tildalabel {
-  background-color: $blueTintedColor;
+/* // NOTE: This doesn't work in production: it seems that Tilda has a kind of protection for its both label nodes and styles
+ * // Bottom tilda banner
+ * .t-tildalabel {
+ *   background-color: $blueTintedDarkenColor; // color.adjust($blueTintedColor, $lightness: -2%);
+ * }
+ */
+
+// Minor block fixes...
+
+.uc-SoleHeader {
+  padding-bottom: 0 !important;
+}
+
+.uc-Breadcrumbs {
+  overflow: hidden;
+  .t-menu__link-item {
+    &,
+    &:hover {
+      color: #aaa;
+    }
+  }
+  a {
+    #allrecords &.t-menu__link-item:hover {
+      color: $greenDarkColor !important;
+      text-decoration: underline;
+    }
+  }
+}
+
+.uc-Visual {
+  .t208__textwrapper {
+    border-radius: 10px;
+  }
+}
+
+// These used only as a resource for the hero section, see `src/Hero.ts`, `initCarrierAndDoves`
+.uc-dove-left {
+  display: none;
+}
+
+// Texts
+.t-input,
+.t-btn,
+.t-descr,
+.t-btnflex__text,
+.t-search-widget__popup-container,
+.t-search-widget__query-result,
+.t-search-widget__result__title,
+.t-search-widget__result__body,
+.t-search-widget__inputcontainer input {
+  font-family: $defaultFont;
+}
+
+// Search
+.t-search-widget__popup {
+  .t-search-widget__result_product-img {
+    border-radius: 10px;
+  }
+  .t-name {
+    font-size: 1.2rem;
+  }
+  .t-descr {
+    font-size: 1rem;
+  }
+}
+
+// Popups
+.t-popup_show {
+  @include activeLink;
+  .t-btn {
+    background-color: $greenDarkColor;
+  }
 }

@@ -1,65 +1,132 @@
 @use 'sass:color';
+@use 'sass:math';
 
 @use '../variables' as *;
 
-#allrecords .js-store-product.js-product {
+// Hide clonable source elements.
+#t-footer {
+  // Those tho are just service containers, their content should be used only in product item cards.
+  .uc-ProductBadges,
+  .uc-ProductActions {
+    display: none;
+  }
+}
+// Adjust cloned buttons
+.uc-ProductBadges,
+.uc-ProductActions {
+  .t142A__wrapper {
+    justify-content: flex-start;
+    padding: 0;
+  }
+}
+
+// Product card
+.js-store-product.js-product {
+  // productNode root
   @include basicActiveLink;
-  .js-store-tabs {
-    // Hide tabs at first
-    opacity: 0;
-    pointer-events: none;
+  // Customize elements
+  .t-name {
+    font-size: 1.5rem;
   }
-  .DetailsWrapper {
-    margin: 1em 0;
-    .t-descr {
-      color: #999;
-    }
+  .t-descr {
+    font-size: 1.2rem;
   }
-  .Variants {
-    margin: 1em 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    .Variant {
-      border-radius: 7px;
-      box-sizing: content-box;
-      border: 2px solid transparent;
-      transition: all var(--transitionTimeMs);
-      &.Current {
-        opacity: 0.5;
-        background-color: $primaryColor;
-        border-color: $primaryColor;
-      }
-      img {
-        background-color: #ccc;
-        border: 2px solid transparent;
-        transition: all var(--transitionTimeMs);
-        display: block;
-        height: 120px;
-        width: auto;
-        border-radius: 5px;
-        overflow: hidden;
-      }
-    }
-    .Variant.Current img,
-    a.Variant:hover img {
-      border: 2px solid $primaryColor;
-    }
-    .Variant.Current img {
-      background-color: $primaryColor;
-    }
+  .js-store-prod-name {
+    font-size: 2rem;
   }
-  // Buttons
+  .js-store-prod-all-text {
+    font-size: 1.2rem;
+  }
+  // Articul
+  .t-store__prod-popup__sku {
+    margin-top: 0.75em;
+  }
+  // Hide the default 'buy' item (will be replaced by the custom one
   .t-store__prod-popup__btn-wrapper {
-    a[data-social-id] {
-      display: inline-block;
-      vertical-align: middle;
-      user-select: none;
-      margin: 0 0.2em;
-      &,
-      & > svg {
-        width: 45px;
-        height: 45px;
+    display: none;
+  }
+
+  // Adjust mobile font sizes
+  .MobileTitle {
+    > div {
+      margin: 0 20px;
+    }
+    margin-bottom: 40px;
+    display: none;
+  }
+  .t-store__prod-popup__sku {
+    opacity: 70%;
+  }
+  // Adjust preview column size
+  @media (width <= $wideTreshold) {
+    .t-slds__thumbsbullet-wrapper,
+    .t-slds__main {
+      @media (width <= $mobileTreshold) {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .t-slds__container,
+    .t-slds__imgwrapper {
+      @mixin setPortraitWidth($width) {
+        width: $width; // 300px;
+        height: math.div($width * 4, 3); // 400px;
+      }
+      @include setPortraitWidth(360px);
+      @media (width <= $smallTreshold) {
+        @include setPortraitWidth(280px);
+      }
+      @media (width <= $tinyTreshold) {
+        @include setPortraitWidth(200px);
+      }
+    }
+  }
+  @media (width <= $smallTreshold) {
+    .t-store__prod-popup__col-left {
+      padding: 0 20px;
+    }
+    // Diplay top title instead of inner one
+    .MobileTitle {
+      display: block;
+    }
+    .t-store__prod-popup__col-right .t-store__prod-popup__title-wrapper {
+      display: none;
+    }
+    .js-store-prod-name {
+      font-size: 6vw;
+    }
+    .t-store__prod-popup__info {
+      padding-top: 10px;
+    }
+    .js-product-controls-wrapper .t-descr,
+    .t-store__prod-popup__sku,
+    .t-store__tabs__button .t-name,
+    .Buttons .t-btn,
+    .js-store-prod-all-text,
+    .js-store-prod-all-charcs,
+    .t-store__tabs__content {
+      font-size: 4vw;
+    }
+    .t-store__prod-popup__col-left,
+    .t-store__prod-popup__col-right {
+      .t-store__tabs__item-title {
+        font-size: 4vw;
+      }
+    }
+    .Buttons {
+      padding: 0;
+      .t-btn {
+        flex: 1;
+        padding: 15px;
+      }
+      &.Badges .t-btn {
+        padding: 5px 15px;
+      }
+    }
+    @media (width <= 560px) {
+      .t-store__prod-popup__col-left .t-store__tabs__item {
+        margin: 0 20px;
       }
     }
   }

@@ -1,0 +1,74 @@
+@use '../variables' as *;
+
+/* StoreIndex */
+
+// Hide clonable source elements.
+#t-footer {
+  // Those tho are just service containers, their content should be used only in product item cards.
+  .uc-StoreIndexActions {
+    display: none;
+  }
+}
+// Adjust cloned buttons
+.uc-StoreIndexActions {
+  .t142A__wrapper {
+    justify-content: flex-start;
+    padding: 0;
+  }
+}
+
+.uc-StoreIndex {
+  @include activeLink;
+  .t-bgimg,
+  .t-img {
+    border-radius: 10px;
+  }
+  @media (width > $mobileTreshold) {
+    .t-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+  // Update image sizes for small screens
+  @media (width <= $mobileTreshold) {
+    .t-name,
+    .t-descr {
+      text-align: center;
+    }
+    .t142A__wrapper {
+      justify-content: center;
+    }
+    $mobileSize: 200px;
+    .t-item {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      > * {
+        padding-left: 0 !important;
+      }
+      > *:first-child {
+        max-width: 100%;
+        display: block;
+        margin-bottom: 15px;
+      }
+    }
+    .t-bgimg {
+      width: $mobileSize !important;
+      height: $mobileSize !important;
+      max-width: 100%;
+      max-height: $mobileSize;
+    }
+  }
+  /*
+  // Font sizes
+  .t-store__card {
+    #allrecords & .t-typography__title {
+      font-size: 1.2rem;
+    }
+    #allrecords & .t-typography__descr {
+      font-size: 1rem;
+    }
+  }
+  */
+}

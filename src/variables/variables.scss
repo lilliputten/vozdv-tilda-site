@@ -1,13 +1,17 @@
+@use 'sass:color';
+
 // Core colors
 $greenColor: #9a2;
 $greenDarkColor: #672;
 $goldColor: #fb0;
 $goldDarkColor: #f90;
 $blueLightColor: #3ae;
+$blueDark3: #047;
 $blueTintedColor: #135;
+$blueTintedDarkenColor: color.adjust($blueTintedColor, $lightness: -2%);
 
 // App colors...
-$primaryColor: $greenColor;
+$primaryColor: $blueTintedColor;
 
 $themeAccentColor: $primaryColor;
 $themeGrayColor: #333;
@@ -34,13 +38,21 @@ $topMenuHeight: 72px;
 
 // Fonts
 
-$defaultFont: 'Inter', Arial, sans-serif;
-$titleFont: 'DrukTextWideTT', Arial, sans-serif;
+$defaultFont: 'Tilda Sans', Arial, sans-serif;
+$titleFont: 'Ponomar', Arial, sans-serif;
 $defaultFontSize: 16px;
 
 // Adaptive layouts...
 
 $extraWideTreshold: 1400px;
-$wideTreshold: 1200px;
+$wideTreshold: 1240px; // 1200?
 $mobileTreshold: 960px;
 $smallTreshold: 660px;
+// Used in SubPage, for product image adaptive styling
+$tinyTreshold: 560px;
+// Used for adaptive StoreGrid layout (the minimal t-store__card treshold: the single column)
+$microTreshold: 480px;
+
+// Hover media constant, use like `@media #{$hoverMediaRules} { ... }`
+
+$hoverMediaRules: '(hover: hover) and (pointer: fine)';
