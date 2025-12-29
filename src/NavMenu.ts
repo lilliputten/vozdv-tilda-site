@@ -33,6 +33,12 @@ function updateNavMenuHeight(
 function setupNodes(navHeader: HTMLDivElement, navMenu: HTMLDivElement) {
   // Header nodes...
   const headerWrapper = navHeader.querySelector<HTMLDivElement>('.t820');
+  if (!headerWrapper) {
+    // eslint-disable-next-line no-console
+    console.warn('[NavHeader:setupNodes] Not found headerWrapper (.t820)');
+    return;
+  }
+  headerWrapper.classList.add('t-container');
   // const headerContainer = headerWrapper.querySelector<HTMLDivElement>('.t820__container');
   // Menu nodes...
   const menuWrapper = navMenu.querySelector<HTMLDivElement>('.t1272');
@@ -42,6 +48,15 @@ function setupNodes(navHeader: HTMLDivElement, navMenu: HTMLDivElement) {
   const logoClone = logoBase.cloneNode(true);
   menuBase.prepend(navHeader);
   headerWrapper.prepend(logoClone);
+
+  // Wrap all menuContainer children with a `t-container`
+  const menuContainer = menuWrapper.querySelector<HTMLDivElement>('.t-menu-base__maincontainer');
+  const container = document.createElement('div');
+  container.classList.add('t-container');
+  while (menuContainer.firstChild) {
+    container.appendChild(menuContainer.firstChild);
+  }
+  menuContainer.prepend(container);
 
   navHeader.classList.add('inited');
 
@@ -63,14 +78,14 @@ export function initNavMenu() {
   const navHeader = document.querySelector<HTMLDivElement>(navHeaderSelector);
   if (!navHeader) {
     // eslint-disable-next-line no-console
-    console.warn('[NavHeader] Not found', navHeaderSelector);
+    console.warn('[NavHeader:initNavMenu] Not found', navHeaderSelector);
     return;
   }
   const navMenuSelector = '.uc-NavMenu';
   const navMenu = document.querySelector<HTMLDivElement>(navMenuSelector);
   if (!navMenu) {
     // eslint-disable-next-line no-console
-    console.warn('[NavMenu] Not found', navMenuSelector);
+    console.warn('[NavMenu:initNavMenu] Not found', navMenuSelector);
     return;
   }
 

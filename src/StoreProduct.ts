@@ -88,17 +88,11 @@ function appendActionsAndLabels(rightColumn: HTMLElement) {
   if (badgesNode) {
     badgesNode.classList.add('Buttons', 'Badges');
     rightColumn.append(badgesNode);
-    // const btns = badgesNode.querySelectorAll('.t-btn');
-    // btns[0]?.insertAdjacentHTML('afterbegin', '<i class="fa fa-gift"></i> ');
   }
   const actionsNode = document.querySelector('.uc-ProductActions'); // ?.cloneNode(true) as Element; // Clone to debug original node
   if (actionsNode) {
     actionsNode.classList.add('Buttons', 'Actions');
     rightColumn.append(actionsNode);
-    // const btns = actionsNode.querySelectorAll('.t-btn');
-    // btns[0]?.insertAdjacentHTML('afterbegin', '<i class="fa fa-shopping-cart"></i> ');
-    // btns[1]?.insertAdjacentHTML('afterbegin', '<i class="fa fa-bolt"></i> ');
-    // btns[2]?.insertAdjacentHTML('afterbegin', '<i class="fa fa-gift"></i> ');
   }
 }
 
